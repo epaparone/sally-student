@@ -24,7 +24,6 @@
         <div id='app'>
 
         </div>
-    </body>
 
     <!-- Load React component -->
     <script type='text/babel'>
@@ -32,71 +31,58 @@
 
         const appRoot = document.querySelector('#app');
 
-        const header = (
-            <div>
-                <h1>Sally Student</h1>
-                <h2>I'm an aspiring full stack web developer. I love cats, coding, and crocheting.</h2>
-            </div>
-        );
-
-        const contact = (
-            <div>
-                <h3>Contact Info</h3>
-                <ul>
-                    <li>Sally Student</li>
-                    <li>Email: <a href={`mailto:sallystudent@gmail.com`} target={`_blank`}>sallystudent@gmail.com</a></li>
-                    <li>Phone Number: (614)724-3477</li>
-                </ul>
-                <img src={`https://m.media-amazon.com/images/M/MV5BMTY5NzE3NzU3MF5BMl5BanBnXkFtZTgwMjg0NTQ5MDE@._V1_.jpg`} alt="Broad City's Ilana Glazer" style="width:250px"></img>
-            </div>
-        );
-
-        const education = (
-            <div>
-                <h3>Education</h3>
-                    <ul>
-                        <li><strong>The Ohio State Univserity</strong></li>
-                        <li><i>Major:</i> Communications</li>
-                        <li><i>Minor:</i> Graphic Design</li>
-                        <li>2014-2018</li>
-                    </ul>
-            </div>
-        );
-
-            
-        const employment = (
-            <div>
-                <h3>Employment History</h3>
-                    <h4>Customer Support Agent - Deals, Deals, Deals!</h4>
-                    <ul>
-                        <li>June 2018-present</li>
-                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
-                    </ul>
-                    <h4>Waitress - Fancy Sushi Restaurant</h4>
-                    <ul>
-                        <li>September 2015-June 2018</li>
-                        <li>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                    </ul>
-            </div>
-        );
-
-      
-
         function App(props) {
             console.log(props);
             return (
                 <header>
-                    {props.h1header}
+                    {props.children}
                 </header>  
             );
         }
 
         ReactDOM.render(
-            <App
-                h1header='Sally Student'   
-            >
+            <App>
+                <header>
+                    <h1>Sally Student</h1>
+                    <h2>I'm an aspiring full stack web developer. I love cats, coding, and crocheting.</h2>
+                </header>
+                <section className='main'>
+                    <address>
+                        <h3>Contact Info</h3>
+                        <ul>
+                        <li>Sally Student</li>
+                        <li>Email: <a href={`mailto:sallystudent@gmail.com`}>sallystudent@gmail.com</a></li>
+                        <li>Phone Number: (614)724-3477</li>
+                        </ul>
+                        <img classname='bio-photo' src={`https://m.media-amazon.com/images/M/MV5BMTY5NzE3NzU3MF5BMl5BanBnXkFtZTgwMjg0NTQ5MDE@._V1_.jpg`} alt={`Broad City's Ilana Glazer`}></img>
+                    </address>
+                    <section id="education">
+                        <h3>Education</h3>
+                        <ul>
+                        <li><strong>The Ohio State Univserity</strong></li>
+                        <li><i>Major:</i> Communications</li>
+                        <li><i>Minor:</i> Graphic Design</li>
+                        <li>2014-2018</li>
+                        </ul>
+                    </section>
+                    <section id="Employment">
+                        <h3>Employment History</h3>
+                        <h4>Customer Support Agent - Deals, Deals, Deals!</h4>
+                        <ul>
+                        <li>June 2018-present</li>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+                        </ul>
+                        <h4>Waitress - Fancy Sushi Restaurant</h4>
+                        <ul>
+                        <li>September 2015-June 2018</li>
+                        <li>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                        </ul>
+                    </section>
+                </section>
             </App>, 
         appRoot);
 
     </script>
+    </body>
+
 </html>
